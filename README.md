@@ -14,7 +14,8 @@ The GitHub request is unauthenticated and fetches model metadata only. Shelftrac
 
 1. Edit `models-v1.json`. Keep `schemaVersion` at `1` and place each entry under `openai`, `claude`, `gemini`, or `mistral` in `providers`.
 2. Use the exact API model ID and keep it unique within its provider. Verify that the model supports Shelftrace’s structured JSON classification before marking it compatible or recommending it.
-3. Publish the change to `main`. In Shelftrace, click **Refresh Models** and verify the updated name, recommendation, or notice. GitHub caching can briefly delay changes.
+3. Open a pull request and check that **Validate catalog** passes before merging to `main`. To check locally, run `python3 scripts/validate_catalog.py`.
+4. In Shelftrace, click **Refresh Models** and verify the updated name, recommendation, or notice. GitHub caching can briefly delay changes.
 
 | Field | Required | Meaning |
 | --- | --- | --- |
